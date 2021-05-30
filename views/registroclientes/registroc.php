@@ -12,111 +12,25 @@
 
 
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand text-light" href="#">DICAMA</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active text-light" aria-current="page" href="#">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="#">Productos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="#">Compras</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="#">Cotización</a>
-                        </li>
-                    </ul>
-                    <span class="navbar-text">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link text-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
-                                    Cuenta
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                    Carrito
-                                </a>
-                            </li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
-        </nav>
+    <div class="input-group mb-3">
+  <label class="input-group-text" for="inputGroupFile01">Upload</label>
+  <input type="file" class="form-control" id="inputGroupFile01">
+</div>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand"></a>
-                <form class="d-flex">
-                <input class="form-control me-2 form-control-sm" type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-danger btn-sm" type="submit">Buscar</button>
-                </form>
-                <a class="navbar-brand"></a>
-            </div>
-        </nav>
+<div class="input-group mb-3">
+  <input type="file" class="form-control" id="inputGroupFile02">
+  <label class="input-group-text" for="inputGroupFile02">Upload</label>
+</div>
 
-        <!-- menu carrito de compras -->
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-            <div class="offcanvas-header">
-                <h5 id="offcanvasRightLabel">Carrito de Compras</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                ...
-            </div>
-        </div>
+<div class="input-group mb-3">
+  <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03">Button</button>
+  <input type="file" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload">
+</div>
 
-        <!--- Menu cuenta del cliente -->
-        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasBottomLabel">Cuenta</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body small">
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        Detalles de la cuenta
-                    </div>
-                    <div class="col-12 col-md-2">
-                        Opciones <br>
-                        <div class="row">
-                                <div class="d-grid gap-2">
-                                <p>¿No tienes una cuenta? <a class="link" href="../registroclientes/registroc.php">Registrate </a></p>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col m-1">
-                                <div class="d-grid gap-2">
-                                    <button type="button" class="btn btn-outline-danger btn-sm">Actualizar datos</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col m-1">
-                                <div class="d-grid gap-2">
-                                    <button type="button" class="btn btn-outline-danger btn-sm">Ayuda</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col m-1">
-                                <div class="d-grid gap-2">
-                                    <button type="button" class="btn btn-outline-danger btn-sm">Aplicar a Mayorista</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="input-group">
+  <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+  <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
+</div>
 
 
         
