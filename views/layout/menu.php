@@ -42,6 +42,13 @@
         </li>
 
         <li class="nav-item">
+          <a class="nav-link collapsed" href="../productos/subcategoria_catalogo.php">
+          <i class="fas fa-warehouse"></i>
+            <span>SubCategorias</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
           <a class="nav-link collapsed" href="../usuarios/usuario_catalogo.php">
             <i class="fas fa-user-tie"></i>
             <span>Usuarios</span>

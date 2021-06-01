@@ -11,7 +11,13 @@
     }
 
     include '../layout/menu.php';
+    include '../../model/producto.php';
 
+    $producto = new Producto();
+
+    $codigo = $_GET['codigo'];
+    $productoHistorial = $producto->historial($codigo);
+    $producto_detalle = $producto->producto($codigo);
 ?>
 
     <main id="app">
@@ -19,8 +25,8 @@
         <div class="container-fluid p-4">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a class="text-danger" href="">Inventario</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">KARDEX - </li>
+                    <li class="breadcrumb-item"><a class="text-danger" href="producto_catalogo.php">Productos</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><?php echo $producto_detalle['descripcion']; ?></li>
                 </ol>
             </nav>
         </div>
@@ -36,8 +42,8 @@
                             <a href="{{ route('ajuste.edit', $producto->id) }}" class="btn btn-danger btn-sm">
                                 <i class="fas fa-balance-scale"></i> Ajuste
                             </a> 
-                            <a href="{{ route('inventario.edit', $producto->id) }}" class="btn btn-danger btn-sm">
-                                <i class="fas fa-cart-plus"></i> Agregar
+                            <a href="producto_agregar.php?codigo=<?php echo $codigo ?>" class="btn btn-danger btn-sm">
+                                <i class="fas fa-cart-plus"></i> Registrar Compra
                             </a>
                             <a href="{{ route('producto.edit', $producto->id) }}" class="btn btn-danger btn-sm">
                                 <i class="far fa-edit"></i> Editar
@@ -52,10 +58,6 @@
                                 <input type="hidden" name="fechaExcel" id="fechaExcel" value="">
                                 <button type="submit" class="btn btn-success btn-sm ml-1">Excel</button>
                             </form>
-                            <form class="form-inline float-right ml-1" method="get" action="">
-                                <input type="date" class="form-control form-control-sm" name="fecha" id="fecha" placeholder="Fecha" value="">
-                                <button type="submit" class="btn btn-dark btn-sm ml-1">Consultar</button>
-                            </form>
                         </div>
                     </div>
                     <div class="row mt-2 p-1">
@@ -68,27 +70,34 @@
                                         Producto
                                     </div>
                                     <div class="col-6 col-md-2">
-                                        
+                                        <?php echo $producto_detalle['descripcion']; ?>
                                     </div>
                                     <div class="col-6 col-md-2" align="right">
                                         Inventario Minimo 
                                     </div>
                                     <div class="col-6 col-md-2">
-                                    
+                                        <?php echo $producto_detalle['minimo']; ?>
                                     </div>
                                     <div class="col-6 col-md-2" align="right">
                                         Existencia Actual
                                     </div>
                                     <div class="col-6 col-md-2">
-                                    
+                                        <?php echo $producto_detalle['existencias']; ?>
                                     </div>
                                 </div>
+                                <br>
                                 <div class="row justify-content-center">
                                     <div class="col-6 col-md-2" align="right">
-                                        Departamento
+                                        Categoria
                                     </div>
                                     <div class="col-6 col-md-2">
-                                    
+                                        <?php echo $producto_detalle['nom_cat']; ?>
+                                    </div>
+                                    <div class="col-6 col-md-2" align="right">
+                                        Subcategoria
+                                    </div>
+                                    <div class="col-6 col-md-2">
+                                        <?php echo $producto_detalle['nombre_sub']; ?>
                                     </div>
                                 </div>
                             </div>
@@ -119,20 +128,21 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php foreach($productoHistorial as $historal){ ?>
                                                 <tr>
-                                                    <th scope="row"></th>
+                                                    <th scope="row"><?php echo $historal['created_at'] ?></th>
+                                                    <td><?php echo $historal['detalle'] ?></td>
+                                                    <td><?php echo $historal['cantidad'] ?></td>
+                                                    <td><?php echo $historal['precio_costo'] ?></td>
+                                                    <td><?php echo $historal['total'] ?></td>
                                                     <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                
                                                     <td></td>
-                                                    <td>Q</td>
-                                                    <td>Q  </td>
+                                                    <td></td>
+                                                    <td><?php echo $historal['exis_cantidad'] ?></td>
+                                                    <td><?php echo $historal['exis_precio_costo'] ?></td>
+                                                    <td><?php echo $historal['exis_total'] ?></td>
                                                 </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
