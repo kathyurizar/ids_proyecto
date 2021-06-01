@@ -1,4 +1,8 @@
 node_modules
+<<<<<<< HEAD
 dicama.sql 
+=======
+vendor
+>>>>>>> 04139bf5d3ae73d3fe2d7dc542b4a233be35b07d
 package-lock.json  
 license 
